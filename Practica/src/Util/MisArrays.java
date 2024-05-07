@@ -36,4 +36,43 @@ public abstract class MisArrays {
             return notas[n / 2];
         }
     }
+
+    public static int maximaNota(int[] notas) {
+        validarNotas(notas);
+        int max = notas[0];
+        for (int nota : notas) {
+            if (nota > max) {
+                max = nota;
+            }
+        }
+        return max;
+    }
+
+    private static void validarNotasMax(int[] notas) {
+        for (int nota : notas) {
+            if (nota < 0 || nota > 10) {
+                throw new IllegalArgumentException("La nota debe estar entre 0 y 10");
+            }
+        }
+    }
+    public static int minimaNota(int[] notas) {
+        validarNotas(notas);
+        int max = notas[0];
+        for (int nota : notas) {
+            if (nota > max) {
+                max = nota;
+            }
+        }
+        return max;
+    }
+
+    private static void validarNotasMin(int[] notas) {
+        for (int nota : notas) {
+            if (nota < 0 || nota > 10) {
+                throw new IllegalArgumentException("La nota debe estar entre 0 y 10");
+            }
+        }
+    }
 }
+
+
