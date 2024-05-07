@@ -23,41 +23,17 @@ public abstract class MisArrays {
             }
         }
     }
-    
     public static float medianaNotas(int[] notas) {
         validarNotas(notas);
         int n = notas.length;
+        Arrays.sort(notas);
+
         if (n % 2 == 0) {
-            return (buscarMediana(notas, 0, n / 2 - 1) + buscarMediana(notas, n / 2, n / 2)) / 2.0f;
+            int indiceMedio1 = n / 2 - 1;
+            int indiceMedio2 = n / 2;
+            return (notas[indiceMedio1] + notas[indiceMedio2]) / 2.0f;
         } else {
-            return buscarMediana(notas, 0, n / 2);
-        }
-    }
-
-    public static int buscarMediana(int[] notas, int inicio, int fin) {
-        int longitud = fin - inicio + 1;
-        int[] notasOrdenadas = new int[longitud];
-
-        for (int i = inicio; i <= fin; i++) {
-            notasOrdenadas[i - inicio] = notas[i];
-        }
-
-        Arrays.sort(notasOrdenadas);
-
-        if (longitud % 2 == 0) {
-            int indiceMedio1 = (longitud / 2) - 1;
-            int indiceMedio2 = longitud / 2;
-            return (notasOrdenadas[indiceMedio1] + notasOrdenadas[indiceMedio2]) / 2;
-        } else {
-            return notasOrdenadas[longitud / 2];
-        }
-    }
-
-    public static void validarNotasMediana(int[] notas) {
-        for (int nota : notas) {
-            if (nota < 0 || nota > 10) {
-                throw new IllegalArgumentException("La nota debe estar entre 0 y 10");
-            }
+            return notas[n / 2];
         }
     }
 }

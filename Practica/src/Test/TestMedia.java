@@ -15,11 +15,11 @@ class TestMedia {
 	void setUp() throws Exception {
 
         notasValidas = new int[5];
-        notasValidas[0] = 5;
-        notasValidas[1] = 7;
-        notasValidas[2] = 6;
+        notasValidas[0] = 8;
+        notasValidas[1] = 8;
+        notasValidas[2] = 8;
         notasValidas[3] = 8;
-        notasValidas[4] = 9;
+        notasValidas[4] = 8;
 
         notasNoValidas = new int[5];
         notasNoValidas[0] = 100;
@@ -35,7 +35,7 @@ class TestMedia {
 		void testMediaNotas_NotasValidas() 
 	    {
 	        float media = MisArrays.mediaNotas(notasValidas);
-	        assertEquals(5, media); 
+	        assertEquals(8, media); 
 	    }
 	void testMediaNotas_NotasNoValidas() 
     {
